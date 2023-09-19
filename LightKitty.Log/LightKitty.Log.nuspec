@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
+    <id>LightKitty.Log</id>
+    <version>1.0.0</version>
     <title>$title$</title>
-    <authors>$author$</authors>
+    <authors>Light Kitty</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
-    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
-    <description>$description$</description>
+    <projectUrl>https://github.com/LightKitty/LightKitty.Log</projectUrl>
+    <description>Light weight log. 轻量日志</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>Tag1 Tag2</tags>
+    <tags>Log 日志</tags>
   </metadata>
 </package>
