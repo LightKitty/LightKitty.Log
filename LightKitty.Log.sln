@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightKitty.Log", "LightKitty.Log\LightKitty.Log.csproj", "{0BD4945C-7B33-495F-9D34-64431AD83C47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightKitty.Log.Test", "LightKitty.Log.Test\LightKitty.Log.Test.csproj", "{08984543-8EF0-42D7-893A-32267AC9B774}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD4945C-7B33-495F-9D34-64431AD83C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD4945C-7B33-495F-9D34-64431AD83C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD4945C-7B33-495F-9D34-64431AD83C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD4945C-7B33-495F-9D34-64431AD83C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08984543-8EF0-42D7-893A-32267AC9B774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08984543-8EF0-42D7-893A-32267AC9B774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08984543-8EF0-42D7-893A-32267AC9B774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08984543-8EF0-42D7-893A-32267AC9B774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {459D662A-CAE1-4601-A362-C7B0FCF96BB7}
+	EndGlobalSection
+EndGlobal
