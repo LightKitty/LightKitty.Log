@@ -31,6 +31,11 @@ namespace LightKitty.Log
         /// </summary>
         public static LogLevel WriteLogLevel { get; set; } = LogLevel.Debug;
 
+        /// <summary>
+        /// Whether to write to the console at the same time. 是否同时写控制台
+        /// </summary>
+        public static bool IsConsoleWrite = false;
+
         #endregion
 
         #region public methods
@@ -127,7 +132,9 @@ namespace LightKitty.Log
         /// <param name="exMsg"></param>
         private static void Write(LogLevel logLevel, string msg, string exMsg)
         {
-            Write(GetName(), GetContent(logLevel, msg, exMsg)); //格式化日志、写日志
+            string content = GetContent(logLevel, msg, exMsg);//格式化日志
+            if(IsConsoleWrite) Console.WriteLine(content); //写控制台
+            Write(GetName(), content); //写日志
         }
 
         /// <summary>
