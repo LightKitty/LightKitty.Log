@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LightKitty.Log</id>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
     <title>$title$</title>
     <authors>Light Kitty</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,7 +10,7 @@
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/LightKitty/LightKitty.Log</projectUrl>
     <description>Light weight log. 轻量日志</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>bug fix</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Log 日志</tags>
   </metadata>
