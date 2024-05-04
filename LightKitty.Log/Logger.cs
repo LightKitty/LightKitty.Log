@@ -186,11 +186,11 @@ namespace LightKitty.Log
         {
             if (string.IsNullOrEmpty(exMsg))
             {
-                return GetHead(logLevel) + msg + Environment.NewLine;
+                return GetHead(logLevel) + msg;
             }
             else
             {
-                return GetHead(logLevel) + msg + Environment.NewLine + exMsg + Environment.NewLine;
+                return GetHead(logLevel) + msg + Environment.NewLine + exMsg;
             }
         }
 
