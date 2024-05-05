@@ -151,7 +151,7 @@ namespace LightKitty.Log
                 { //存在日志文件
                     using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8)) //追加
                     {
-                        sw.Write(msg); //写日志
+                        sw.WriteLine(msg); //写日志
                     }
                 }
                 else
@@ -160,7 +160,7 @@ namespace LightKitty.Log
                     using (var fs = File.Create(path)) //创建日志文件
                     using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     {
-                        sw.Write(msg); //写日志
+                        sw.WriteLine(msg); //写日志
                     } 
                 }
             }
