@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,23 +133,28 @@ namespace LightKitty.Log
             {
                 return null;
             }
-            StringBuilder builder = new StringBuilder();
+            Queue<string> queue = new Queue<string>(lineCount);
             lock (fileLock)
             {
+                // 逐行读取文件并存储在列表中
                 using (StreamReader reader = new StreamReader(path))
                 {
-                    string[] lines = new string[lineCount];
-                    for (int i = 0; i < lineCount; i++)
+                    while (!reader.EndOfStream)
                     {
-                        lines[i] = reader.ReadLine();
-                    }
-
-                    // 现在lines数组中包含了文件的最后几行，你可以对其进行处理
-                    foreach (string line in lines)
-                    {
-                        builder.AppendLine(line);
+                        string line = reader.ReadLine();
+                        if (queue.Count == lineCount)
+                        {
+                            queue.Dequeue(); // 移除最早的行
+                        }
+                        queue.Enqueue(line); // 添加当前行
                     }
                 }
+            }
+            StringBuilder builder = new StringBuilder();
+            // 将队列中的行添加到列表中
+            foreach (string line in queue)
+            {
+                builder.AppendLine(line);
             }
             return builder.ToString();
         }
