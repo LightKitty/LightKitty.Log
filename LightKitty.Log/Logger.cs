@@ -15,7 +15,7 @@ namespace LightKitty.Log
         /// <summary>
         /// Write lock. 写日志锁
         /// </summary>
-        private static readonly object writeLock = new object();
+        private static readonly object fileLock = new object();
 
         /// <summary>
         /// Log folder path. 日志文件夹路径
@@ -120,6 +120,39 @@ namespace LightKitty.Log
             });
         }
 
+        /// <summary>
+        /// Obtain the latest logs. 获取最新日志
+        /// </summary>
+        /// <param name="lineCount">Line number. 行数</param>
+        /// <returns></returns>
+        public static string GetLatestLog(int lineCount = 10)
+        {
+            string path = folderPath + GetName(); //日志路径
+            if (!File.Exists(path))
+            {
+                return null;
+            }
+            StringBuilder builder = new StringBuilder();
+            lock (fileLock)
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    string[] lines = new string[lineCount];
+                    for (int i = 0; i < lineCount; i++)
+                    {
+                        lines[i] = reader.ReadLine();
+                    }
+
+                    // 现在lines数组中包含了文件的最后几行，你可以对其进行处理
+                    foreach (string line in lines)
+                    {
+                        builder.AppendLine(line);
+                    }
+                }
+            }
+            return builder.ToString();
+        }
+
         #endregion
 
         #region private methods
@@ -145,7 +178,7 @@ namespace LightKitty.Log
         private static void Write(string name, string msg)
         {
             string path = folderPath + name; //日志路径
-            lock (writeLock)
+            lock (fileLock)
             { //保证单线程写磁盘文件
                 if (File.Exists(path))
                 { //存在日志文件

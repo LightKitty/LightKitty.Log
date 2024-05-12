@@ -25,6 +25,8 @@ namespace LightKitty.Log.Test
             Logger.Fatal("fatal log");
 
             Thread.Sleep(1000);
+
+            string logs = Logger.GetLatestLog(2);
         }
     }
 }
